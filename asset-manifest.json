@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Flavorly/static/css/main.d7803d60.css",
+    "main.js": "/Flavorly/static/js/main.fee07eb0.js",
+    "static/js/453.5b888289.chunk.js": "/Flavorly/static/js/453.5b888289.chunk.js",
+    "static/media/add-items.png": "/Flavorly/static/media/add-items.92b2f68ed2b17feadab3.png",
+    "static/media/discovery.png": "/Flavorly/static/media/discovery.7948edf9d78d9b0beeaf.png",
+    "static/media/recipe.png": "/Flavorly/static/media/recipe.95c4222246cce764a846.png",
+    "static/media/post-creation.png": "/Flavorly/static/media/post-creation.580cf5817451f3c19af8.png",
+    "static/media/leaderboards.png": "/Flavorly/static/media/leaderboards.a6677bdfbb3babe14037.png",
+    "static/media/shopping-list.png": "/Flavorly/static/media/shopping-list.b17e1117793b59a49678.png",
+    "index.html": "/Flavorly/index.html",
+    "main.d7803d60.css.map": "/Flavorly/static/css/main.d7803d60.css.map",
+    "main.fee07eb0.js.map": "/Flavorly/static/js/main.fee07eb0.js.map",
+    "453.5b888289.chunk.js.map": "/Flavorly/static/js/453.5b888289.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d7803d60.css",
+    "static/js/main.fee07eb0.js"
+  ]
+}
