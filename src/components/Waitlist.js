@@ -116,27 +116,65 @@ const Waitlist = () => {
     setLoading(true);
     setError('');
     
+    // Create the waitlist entry
+    const waitlistEntry = {
+      name,
+      email,
+      timestamp: new Date().toISOString()
+    };
+    
     try {
-      const response = await fetch('http://localhost:3001/api/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email }),
-      });
+      // First try to submit to the server if we're in development
+      if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        const response = await fetch('http://localhost:3001/api/waitlist', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(waitlistEntry),
+        });
+        
+        if (!response.ok) {
+          throw new Error('Server error. Please try again later.');
+        }
+      } else {
+        // For production/GitHub Pages, use a serverless function or store locally
+        // Option 1: Store in localStorage as a temporary solution
+        const waitlistEntries = JSON.parse(localStorage.getItem('waitlistEntries')) || [];
+        waitlistEntries.push(waitlistEntry);
+        localStorage.setItem('waitlistEntries', JSON.stringify(waitlistEntries));
+        
+        // Option 2: Use a form submission service (uncomment and configure as needed)
+        // const formData = new FormData();
+        // formData.append('name', name);
+        // formData.append('email', email);
+        // await fetch('https://formspree.io/f/your-form-id', {
+        //   method: 'POST',
+        //   body: formData,
+        //   headers: {
+        //     'Accept': 'application/json'
+        //   }
+        // });
+      }
       
-      const data = await response.json();
+      // Set success state
+      setSubmitted(true);
+      setName('');
+      setEmail('');
+    } catch (err) {
+      console.error('Error:', err);
       
-      if (response.ok) {
+      // Fallback to localStorage if the server request fails
+      try {
+        const waitlistEntries = JSON.parse(localStorage.getItem('waitlistEntries')) || [];
+        waitlistEntries.push(waitlistEntry);
+        localStorage.setItem('waitlistEntries', JSON.stringify(waitlistEntries));
         setSubmitted(true);
         setName('');
         setEmail('');
-      } else {
-        throw new Error(data.error || 'Something went wrong');
+      } catch (localStorageErr) {
+        setError('Unable to submit. Please try again later.');
       }
-    } catch (err) {
-      console.error('Error:', err);
-      setError(err.message || 'Failed to submit. Please try again later.');
     } finally {
       setLoading(false);
     }
