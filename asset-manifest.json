@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Flavorly/static/css/main.880c3ead.css",
-    "main.js": "/Flavorly/static/js/main.08b931ed.js",
+    "main.js": "/Flavorly/static/js/main.44ab21b2.js",
     "static/js/453.5b888289.chunk.js": "/Flavorly/static/js/453.5b888289.chunk.js",
     "static/media/add-items.png": "/Flavorly/static/media/add-items.92b2f68ed2b17feadab3.png",
     "static/media/discovery.png": "/Flavorly/static/media/discovery.7948edf9d78d9b0beeaf.png",
@@ -11,11 +11,11 @@
     "static/media/shopping-list.png": "/Flavorly/static/media/shopping-list.b17e1117793b59a49678.png",
     "index.html": "/Flavorly/index.html",
     "main.880c3ead.css.map": "/Flavorly/static/css/main.880c3ead.css.map",
-    "main.08b931ed.js.map": "/Flavorly/static/js/main.08b931ed.js.map",
+    "main.44ab21b2.js.map": "/Flavorly/static/js/main.44ab21b2.js.map",
     "453.5b888289.chunk.js.map": "/Flavorly/static/js/453.5b888289.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.880c3ead.css",
-    "static/js/main.08b931ed.js"
+    "static/js/main.44ab21b2.js"
   ]
 }
